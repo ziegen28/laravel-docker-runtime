@@ -1,5 +1,5 @@
 {
-  "name": "ziegen2801/laravel-docker-runtime",
+  "name": "ziegen28/laravel-docker-runtime",
   "description": "Sail++ Docker Runtime for Laravel (Apache-first, UID/GID safe)",
   "type": "library",
   "license": "MIT",
