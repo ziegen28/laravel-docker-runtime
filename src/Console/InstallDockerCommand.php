@@ -1,6 +1,6 @@
 <?php
 
-namespace Ziegen2801\DockerRuntime\Console;
+namespace Ziegen28\DockerRuntime\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;

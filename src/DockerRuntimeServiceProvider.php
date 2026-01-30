@@ -1,9 +1,9 @@
 <?php
 
-namespace Ziegen2801\DockerRuntime;
+namespace Ziegen28\DockerRuntime;
 
 use Illuminate\Support\ServiceProvider;
-use Ziegen2801\DockerRuntime\Console\InstallDockerCommand;
+use Ziegen28\DockerRuntime\Console\InstallDockerCommand;
 
 class DockerRuntimeServiceProvider extends ServiceProvider
 {

@@ -1,24 +1,21 @@
 {
-  "name": "ziegen28/laravel-docker-runtime",
-  "description": "Sail++ Docker Runtime for Laravel (Apache-first, UID/GID safe)",
-  "type": "library",
-  "license": "MIT",
-  "require": {
-    "php": "^8.2|^8.3|^8.4",
-    "illuminate/support": "^10|^11|^12"
-  },
-  "autoload": {
-    "psr-4": {
-      "Ziegen2801\\DockerRuntime\\": "src/"
+    "name": "ziegen28/laravel-docker-runtime",
+    "description": "Sail++ Ultimate Docker Runtime for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ziegen28\\DockerRuntime\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ziegen28\\DockerRuntime\\DockerRuntimeServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1"
     }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Ziegen28\\DockerRuntime\\DockerRuntimeServiceProvider"
-      ]
-    }
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true
 }
