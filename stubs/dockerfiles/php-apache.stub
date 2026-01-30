@@ -1,0 +1,41 @@
+FROM php:{{PHP}}-apache
+
+# -----------------------------
+# Build arguments with defaults
+# -----------------------------
+ARG UID=1000
+ARG GID=1000
+
+# -----------------------------
+# Create application user
+# (DO NOT switch USER for Apache)
+# -----------------------------
+RUN groupadd -g ${GID} laravel \
+ && useradd -u ${UID} -g ${GID} -m laravel
+
+# -----------------------------
+# Enable Apache rewrite
+# -----------------------------
+RUN a2enmod rewrite
+
+# -----------------------------
+# Install system deps + Composer
+# -----------------------------
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    curl \
+ && curl -sS https://getcomposer.org/installer \
+    | php -- --install-dir=/usr/local/bin --filename=composer \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+# -----------------------------
+# Apache virtual host
+# -----------------------------
+COPY docker/apache/dev-site.conf /etc/apache2/sites-available/000-default.conf
+
+# -----------------------------
+# Workdir
+# -----------------------------
+WORKDIR /var/www/html

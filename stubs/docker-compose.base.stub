@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+      - ../laravel-docker-runtime:/var/www/laravel-docker-runtime
+    depends_on:
+      - db

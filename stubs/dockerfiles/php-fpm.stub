@@ -1,0 +1,6 @@
+FROM php:{{PHP}}-fpm-alpine
+ARG UID
+ARG GID
+RUN addgroup -g ${GID} laravel && adduser -D -u ${UID} -G laravel laravel
+USER laravel
+WORKDIR /var/www/html
