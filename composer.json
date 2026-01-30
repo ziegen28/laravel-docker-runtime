@@ -15,7 +15,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Ziegen2801\\DockerRuntime\\DockerRuntimeServiceProvider"
+        "Ziegen28\\DockerRuntime\\DockerRuntimeServiceProvider"
       ]
     }
   },
